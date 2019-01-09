@@ -2,7 +2,7 @@
 
 If you can read this text you have already taken your first steps in starting to use a version control system.
 
-A version control system is a tool helps a group of people work on the same files in a systematic and safe manner, allowing multiple users to make changes to the same file and merge the changes later. It is also possible to create diverging branches so that multiple independent areas of development can happen in parallel, then have these merged together safely at a later time. Version control systems also keep track of all previous versions of files, so that you can revert any or all changes made since a given date.
+A version control system is a tool that helps a group of people work on the same files in a systematic and safe manner, allowing multiple users to make changes to the same file and merge the changes later. It is also possible to create diverging branches so that multiple independent areas of development can happen in parallel, then have these merged together safely at a later time. Version control systems also keep track of all previous versions of files, so that you can revert any or all changes made since a given date.
 
 In this course we will be using Github Classroom, where you will find the assignment texts, project description, and all the code related to the project. You will be given private repositories on the TTK4145 organization, which means that teachers and student assistants will have access to your code by default. You can create issues that reference specific assignment tasks or part of your project code while tagging the student assistants to get their attention.
 
