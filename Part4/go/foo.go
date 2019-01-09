@@ -3,29 +3,38 @@
 package main
 
 import (
-    . "fmt"
+    "fmt"
     "runtime"
-    "time"
+    "sync"
 )
 
 var i = 0
 
 func incrementing() {
-    //TODO: increment i 1000000 times
+    for j := 0; j < 1000000; j++ {
+        i++
+    }
 }
 
 func decrementing() {
-    //TODO: decrement i 1000000 times
+    for j := 0; j < 1000000; j++ {
+        i--
+    }
 }
 
 func main() {
+    var wg sync.WaitGroup
     runtime.GOMAXPROCS(runtime.NumCPU())    // I guess this is a hint to what GOMAXPROCS does...
 	                                    // Try doing the exercise both with and without it!
+    wg.Add(2) // Add 2 since we're spawning 2 goroutines
+    go func() {
+        defer wg.Done()
+        incrementing()
+    }()
+    go func() {
+        defer wg.Done()
+        decrementing()
+    }()
 
-    // TODO: Spawn both functions as goroutines
-	
-    // We have no way to wait for the completion of a goroutine (without additional syncronization of some sort)
-    // We'll come back to using channels in Exercise 2. For now: Sleep.
-    time.Sleep(100*time.Millisecond)
-    Println("The magic number is:", i)
+    fmt.Println("The magic number is:", i)
 }
